@@ -1,14 +1,12 @@
 import os
-from flask import render_template,request, Response
-from werkzeug.utils import redirect
+from flask import render_template, request, Response
 from app import app, APP_ROOT
 
 import io
 from flask import Response
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-from keras.applications.resnet import ResNet50, preprocess_input, decode_predictions
+from keras.applications.resnet import ResNet50, preprocess_input
 import keras.utils as image  
 
 global_x = []
@@ -18,10 +16,6 @@ global_imgmodtime = 0
 @app.route('/')
 def home():
     return render_template('index.html', title='Home')
-
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About', name='Fernando')
 
 @app.route('/predict')
 def predict():
