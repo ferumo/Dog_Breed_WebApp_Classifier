@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block ourpage %}
+
+<div class="container">
+  <h1 class="display1">Hello! Welcome to my Dog Breed Classifier</h1>
+  <div>
+    <h3>How does it work?</h3>
+    <p>
+      After you upload a picture and start the prediction process, first the program detects if the 
+      uploaded image has a human face or is a dog, if neither is found an error will be shown.
+    </p>
+    <div class="container" align="center">
+        <img src="static/index_images/Human-Dog_detector.png" alt="Human-Dog_detector" width="600">
+        <br><small class="text-muted">Image 1. Face or Dog Detector</small>
+    </div>
+    <br>
+    <p class="text-break">
+      if the uploaded picture has a human face or dog, the program will start the process of object 
+      recognition to predict the breeds according to the trained algorithm. This algorithm is a deep 
+      learning algorithm done with a Convolutional Neural Network (CNN).
+    </p>
+    <p class="text-break">
+      It was trained with a total of <b>8,351 dog images</b> from <b>133 dog categories (breeds)</b>, the data was 
+      divided using <b>6,680 dog images for training, 835 for validation and 836 for testing</b>.
+    </p>
+    <p class="text-break">
+      As an output a bar chart will be shown with the top 5 predicted breeds according to the characteristics 
+      found by the trained algorithm.
+    </p>
+  </div>
+  <div>
+    <h3>How to use the App</h3>
+    <ol type="1">
+      <li>Locate the Navigation Bar on top part of the page (Image 2)</li>
+      <li>Click on the “Predict” button to change to the prediction page (Image 2)</li>
+      <div class="container" align="center">
+        <img src="static/index_images/Navigation_bar.png" alt="Navigation_bar" width="70%">
+        <br><small class="text-muted">Image 2. Navigation Bar</small>
+      </div>
+      <br>
+      <li>Click on the “Choose File” (1) button to select a picture from your local drive that contains the Face or Dog for prediction. (Image 3)</li>
+      <li>Click on the “Load Image” (2) button to display it on the application, an information message with the legend “Image Uploaded!!!” will be shown. (Image 3)</li>
+      <li>After the picture is shown on the application now we can click on the “Predict” (3) button, after the process finishes the bar chart with the predicted breeds and percentages will be shown. (Image 3)</li>
+      <li>To classify another image repeat the process from step 3. (Image 3)</li>
+      <div class="container" align="center">
+        <img src="static/index_images/Prediction_Layout.png" alt="Prediction_Layout" width="70%">
+        <br><small class="text-muted">Image 3. Prediction Layout</small>
+      </div>
+      <br>
+    </ol>
+  </div>
+  
+</div>
+
+  
+{% endblock %}

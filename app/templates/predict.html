@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block ourpage %}
+<div class="container">
+
+	<form method="post" action="/upload" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="img">Select your Image for Prediction</label>
+			<input type="file" class="form-control-file" name="img" accept="image/*" id="img"  aria-describedby="fileHelpId">
+			<small id="fileHelpId" class="form-text text-muted">Select Image</small>
+			
+		</div>
+
+		<input type="submit" value="Load Image" class="btn btn-primary">
+		<a class="btn btn-success" href="{{ url_for('predict') }}" role="button">Predict</a>
+
+	</form>
+	<br>
+	<a>{{ output }}</a>
+
+</div>
+<div class="container">
+
+	<img src="/plot" alt="my plot"><br>
+
+</div>
+
+
+
+
+{% endblock %}
